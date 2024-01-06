@@ -1,0 +1,33 @@
+<div class="uploadDiv">
+  <input type="file" (change)="onFileChange($event)" accept=".csv" />
+</div>
+
+<br />
+<div style="margin-top: 2px">
+  <table class="table table-hover text-nowrap">
+    <thead>
+      <tr>
+        <th scope="col">Company</th>
+        <th scope="col">Today High</th>
+        <th scope="col">Today Low</th>
+        <th scope="col">Week High</th>
+        <th scope="col">Week Low</th>
+        <th scope="col">Debt</th>
+        <th scope="col">Total share</th>
+        <th scope="col">Profit Growth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{ item.companyNames }}</td>
+        <td>&#8377; {{ item.todayHigh }}</td>
+        <td>&#8377; {{ item.todayLow }}</td>
+        <td>&#8377; {{ item.WeekHigh }}</td>
+        <td>&#8377; {{ item.WeekLow }}</td>
+        <td>{{ item.debt }}</td>
+        <td>{{ item.profitGrowth }}%</td>
+        <td>{{ item.noOfShares }} Cr.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
